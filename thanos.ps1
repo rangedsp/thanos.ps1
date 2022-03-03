@@ -1,7 +1,7 @@
 param(
     $Path, 
     $SoulStone = $false, # creates a recovery folder to save the files
-    $Ratio = 0.5, # how many to kill (0.1 means 10% will survive)
+    $Ratio = 0.5, # how many to kill (0.1 means 90% will survive)
     $Resolution = 1000, 
     $Silent = $false, # if you hate fun
     $StrictRatio = $false # doesn't allow script to kill more than the ratio
