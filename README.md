@@ -1,5 +1,7 @@
 # thanos.ps1
 
+![snap](https://media4.giphy.com/media/LOoaJ2lbqmduxOaZpS/200.gif)
+
 Script to randomly delete half the files in a folder.
 
 ```
