@@ -1,40 +1,40 @@
 param(
-    $path, 
-    $soulStone = $false, # creates a recovery folder to save the files
-    $ratio = 0.5, # how many to kill (0.1 means 10% will survive)
-    $resolution = 1000, 
-    $silent = $false, # if you hate fun
-    $strictRatio = $false # doesn't allow script to kill more than the ratio
+    $Path, 
+    $SoulStone = $false, # creates a recovery folder to save the files
+    $Ratio = 0.5, # how many to kill (0.1 means 10% will survive)
+    $Resolution = 1000, 
+    $Silent = $false, # if you hate fun
+    $StrictRatio = $false # doesn't allow script to kill more than the ratio
 )
 
-$passingNum = $ratio * $resolution
+$passingNum = $Ratio * $Resolution
 
 
-$files = Get-ChildItem -Path $path -File | ForEach-Object { $_.FullName }
+$files = Get-ChildItem -Path $Path -File | ForEach-Object { $_.FullName }
 if ($files.Count -eq 0) {
     Write-Output "No files found"
     exit
 }
 
-$maxKillCount = $ratio * $files.Count
+$maxKillCount = $Ratio * $files.Count
 
-$recoveryPath = Join-Path -Path $path -ChildPath "recovery"
+$recoveryPath = Join-Path -Path $Path -ChildPath "recovery"
 
-if ($soulStone) {
+if ($SoulStone) {
     mkdir $recoveryPath -Force | Out-Null
 }
 
 $killCount = 0
 foreach ($file in $files) {
-    $randomNumber = Get-Random -Maximum $resolution
+    $randomNumber = Get-Random -Maximum $Resolution
 
-    if ($strictRatio -and ($killCount -lt $maxKillCount)) {
+    if ($StrictRatio -and ($killCount -lt $maxKillCount)) {
         break
     }
 
     if ($randomNumber -lt $passingNum) {
         # ded
-        if ($soulStone) {   
+        if ($SoulStone) {   
             Move-Item -Path $file -Destination $recoveryPath
         }
         else {
@@ -44,7 +44,7 @@ foreach ($file in $files) {
     }
 }
 
-if (!$silent) {
+if (!$Silent) {
     $quotes = @(
         "You should have gone for the head.",
         "Fun isn't something one considers when balancing the universe. But this... does put a smile on my face.",
