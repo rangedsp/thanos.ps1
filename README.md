@@ -19,12 +19,12 @@ Examples:
 1. To delete half the files randomly in folder *C:\Users\rangedsp\Pictures\ThanosRule34*
 
    `.\thanos.ps1 -path "C:\Users\rangedsp\Pictures\ThanosRule34"` 
-2. Move half the files randomly to folder *C:\Users\rangedsp\Pictures\ThanosRule34\recovery*
+2. To move half the files randomly to folder *C:\Users\rangedsp\Pictures\ThanosRule34\recovery*
 
    `.\thanos.ps1 -path "C:\Users\rangedsp\Pictures\ThanosRule34" -SoulStone 1` 
-4. Deletes 90% of the files randomly in folder *C:\Users\rangedsp\Pictures\ThanosRule34\recovery*
+4. To delete 10% of the files randomly in folder *C:\Users\rangedsp\Pictures\ThanosRule34\recovery*
 
    `.\thanos.ps1 -path "C:\Users\rangedsp\Pictures\ThanosRule34" -Ratio 0.1` 
-5. Deletes half the files randomly in folder *C:\Users\rangedsp\Pictures\ThanosRule34*, but ensures at least 1/2 (or whatever the set ratio) of the files will survive.
+5. To delete half the files randomly in folder *C:\Users\rangedsp\Pictures\ThanosRule34*, but ensures at least 1/2 (or whatever the set ratio) of the files will survive.
 
    `.\thanos.ps1 -path "C:\Users\rangedsp\Pictures\ThanosRule34" -StrictRatio 1`
